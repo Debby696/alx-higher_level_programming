@@ -2,7 +2,7 @@
 if __name__ == "__main__":
     """ a program that prints the number of and the list of its arguments."""
     import sys
-    num_args = num_args(sys.argv) - 1
+    num_args = len(sys.argv) - 1
     if num_args == 0:
         print("0 arguments")
     elif num_args == 1:
