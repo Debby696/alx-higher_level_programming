@@ -2,6 +2,7 @@
 if __name__ == "__main__":
     """imports functions from the file calculator_1.py, does some Maths,
     (sum, difference, add, division) and prints the result."""
+    from calculator_1 import add, sub, mul, div
 
     a = 10
     b = 5
