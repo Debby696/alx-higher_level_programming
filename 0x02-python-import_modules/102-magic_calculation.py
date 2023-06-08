@@ -2,10 +2,10 @@
 def magic_calculation(a, b):
     """Python function def magic_calculation(a, b): that does exactly the same
     as bytecode provided by holberton schol"""
-    if b < c:
-        d = add(b, c)
+    if a < b:
+        c = add(a, b)
         for a in range(4, 6):
-            d = add(d, a)
-            return (d)
+            c = add(c, a)
+            return (c)
         else:
-            return (sub(b, c))
+            return (sub(a, b))
