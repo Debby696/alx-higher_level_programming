@@ -1,20 +1,21 @@
 #!/usr/bin/python3
-""" a class Square that defines a square by: (based on 4-square.py)"""
+"""a class Square that defines a square by: (based on 4-square.py)"""
 
-class Square
-"""stands for a square"""
 
-def __init__(self, size):
-        """Initialize a new square.
+class Square:
+    """depicts a square."""
+
+    def __init__(self, size):
+        """A new square is initialized.
 
         Args:
-            size (int): The size of the new square.
+            size (int): The new square size.
         """
         self.size = size
 
     @property
     def size(self):
-        """Get/set the current size of the square."""
+        """Get/set the size of the square currently."""
         return (self.__size)
 
     @size.setter
@@ -26,14 +27,13 @@ def __init__(self, size):
         self.__size = value
 
     def area(self):
-        """Return the current area of the square."""
+        """that returns the current square area"""
         return (self.__size * self.__size)
 
     def my_print(self):
-        """Print the square with the # character."""
-        for i in range(0, self.__size):
-            [print("#", end="") for j in range(self.__size)]
+        """that prints in stdout the square with the character #"""
+        for a in range(0, self.__size):
+            [print("#", end="") for b in range(self.__size)]
             print("")
         if self.__size == 0:
             print("")
-
