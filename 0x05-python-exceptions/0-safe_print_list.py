@@ -4,7 +4,7 @@ def safe_print_list(my_list=[], x=0):
     """a function that prints x elements of a list
 
     args:
-        my_list (list): is the list elements is to be printed from and can be any type.
+        my_list (list): is the list elements is to be printed from
         x (int): Depicts the number of elements of my_list to be printed.
 
     returns:
