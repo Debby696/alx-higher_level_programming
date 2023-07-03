@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 """a class Rectangle that defines a rectangle by: (based on 6-rectangle.py)"""
 
 
