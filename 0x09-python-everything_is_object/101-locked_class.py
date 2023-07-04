@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""Defines a locked class with no class or objects"""
+""" a class LockedClass with no class or object attribute is defined"""
 
 
 class LockedClass:
     """
-    the user is prevented from instatianting new locked attributes
-    except if the new instance attribute is called first_name.
+    Only the  instatiation of an attribute called first_name is allowed
     """
-
 
     __slots__ = ["first_name"]
