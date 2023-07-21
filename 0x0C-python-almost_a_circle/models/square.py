@@ -7,20 +7,19 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """This depicts a square"""
     def __init__(self, size, x=0, y=0, id=None):
-        """initializes the objects attributes"""
-        Rectangle().__init__(self, sizewidth, sizeheight, x, y, id)
-
+        """initializes objects attributes"""
         self.size = size
         self.x = x
         self.y = y
         self.id = None
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """This gives a format for the string representation of class"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     @property
-    def size(Self):
+    def size(self):
         """This gets the value of the size"""
         return self.__width
 
@@ -51,7 +50,7 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 if key == "id":
-                    if input != int and value is not None:
+                    if type(value) != int and value is not None:
                         raise TypeError("id must be an integer")
                     self.id = value
                 if key == "size":
@@ -61,9 +60,10 @@ class Square(Rectangle):
                 if key == "y":
                     self.y = value
 
-        def to_dictionary(self):
-            """This returns the dictionary representation of a Square"""
+    def to_dictionary(self):
+        """This returns the dictionary representation of a Square"""
 
-            obj_dictionary = {'id': self.id, 'size': self.size, 'x': self.x,
-                              'y': self.y}
-            return obj_dictionary
+        obj_dictionary = {'id': self.id, 'size': self.size, 'x': self.x,
+                          'y': self.y}
+
+        return obj_dictionary
