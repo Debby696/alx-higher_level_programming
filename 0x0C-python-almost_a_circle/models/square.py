@@ -8,7 +8,7 @@ class Square(Rectangle):
     """This depicts a square"""
     def __init__(self, size, x=0, y=0, id=None):
         """initializes the objects attributes"""
-        Rectangle().__init__(self, width, height, size, x, y, id)
+        Rectangle().__init__(self, sizewidth, sizeheight, x, y, id)
 
         self.size = size
         self.x = x

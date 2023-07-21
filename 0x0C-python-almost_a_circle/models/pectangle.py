@@ -1,42 +1,43 @@
 #!/usr/bin/python3
-"""This is a class rectangle that inherits from base"""
+""" This is a class rectangle that inherits from base"""
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """This depicts a rectangle """
+    """This depicts a rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Objects attributes are initialized"""
+
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
+        Base.__init__(self, id=None)
 
-    # getter functions
+    # getter function
     @property
     def width(self):
-        """This gets the value for width"""
+        """This gets the value for the width"""
         return self.__width
 
     @property
     def height(self):
-        """This gets the value for height"""
+        """This gets the value for the  height"""
         return self.__height
 
     @property
     def x(self):
-        """This gets the value for x"""
+        """This is used to get the value for x"""
         return self.__x
 
     @property
     def y(self):
-        """This gets the value for y"""
+        """This is used to get the value for y"""
         return self.__y
 
-    # setter functions
+    """ setter functions"""
     @width.setter
     def width(self, value):
         """This sets the value for width"""
@@ -81,12 +82,13 @@ class Rectangle(Base):
 
         self.__y = value
 
+    @property
     def area(self):
         """This defines the area of the rectangle"""
-        return (self.__height * self.__width)
+        return (self.__width * self.__height)
 
     def display(self):
-        """This displays the rectangle with the character # """
+        """This displays the Rectangle instance with the character #"""
         for y in range(self.y):
             print("")
         for row in range(self.__height):
@@ -139,11 +141,10 @@ class Rectangle(Base):
                     self.y = v
 
     def to_dictionary(self):
-        """This returns the dictionary representation of a Rectangle"""
+        """Returns the dictionary representation of a Rectangle"""
 
         obj_dictionary = {'id': self.id, 'width': self.__width,
                           'height': self.__height, 'x': self.__x,
                           'y': self.__y}
 
         return obj_dictionary
-
