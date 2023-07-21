@@ -78,4 +78,3 @@ class Base:
                 for dictionary in list_dictionaries:
                     list_of_instances.append(cls.create(**dictionary))
         return list_of_instances
-
