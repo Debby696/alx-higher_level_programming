@@ -18,7 +18,10 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     """ write and execute the sql query """
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    with db.cursor() as db_cursor:
+        cursor.execute("SELECT cities.id, cities.name, states.name \
+                            FROM cities JOIN states ON cities.state_id \
+                            ORDER BY cities.id ASC")
 
     """ fetch the results of the query """
     rows_selected = cursor.fetchall()
@@ -26,3 +29,6 @@ if __name__ == '__main__':
     """ print the results """
     for row in rows_selected:
         print(row)
+
+    cursor.close()
+    db.close()
