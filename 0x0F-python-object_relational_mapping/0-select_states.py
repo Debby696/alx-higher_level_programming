@@ -5,10 +5,10 @@ a script that lists all states from the database hbtn_0e_0_usa
 """
 
 
-import MySQLdb
-from sys import argv
-
 if __name__ == '__main__':
+
+    import MySQLdb
+    from sys import argv
 
     """ this connect to database """
     db = MySQLdb.connect(
