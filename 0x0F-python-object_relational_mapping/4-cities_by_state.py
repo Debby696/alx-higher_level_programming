@@ -19,16 +19,17 @@ if __name__ == '__main__':
 
     """ write and execute the sql query """
     with db.cursor() as db_cursor:
-        cursor.execute("SELECT cities.id, cities.name, states.name \
+        db_cursor.execute("SELECT cities.id, cities.name, states.name \
                             FROM cities JOIN states ON cities.state_id \
                             ORDER BY cities.id ASC")
 
     """ fetch the results of the query """
-    rows_selected = cursor.fetchall()
+    rows_selected = db_cursor.fetchall()
 
     """ print the results """
-    for row in rows_selected:
-        print(row)
+    if rows_selected is not None:
+        for row in rows_selected:
+            print(row)
 
     cursor.close()
     db.close()
