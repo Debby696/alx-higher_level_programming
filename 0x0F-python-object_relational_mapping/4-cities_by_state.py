@@ -3,9 +3,9 @@
 a script that lists all cities from the database hbtn_0e_4_usa
 """
 
-if __name__ == '__main_ _':
+if __name__ == '__main__':
 
-    import MySQLdb as db
+    import MySQLdb
     from sys import argv
 
     """ this connect to database """
@@ -16,11 +16,13 @@ if __name__ == '__main_ _':
     cursor = db.cursor()
 
     """ write and execute the sql query """
-    cursor.execute("SELECT cities.id, cities.name, states.name \
-                                FROM cities JOIN states ON cities.state_id \
-                                        = states.id ORDER BY cities.id ASC;")
+    cursor.execute(
+        "SELECT cities.id, cities.name, states.name \
+        FROM cities JOIN states ON cities.state_id = states.id \
+        ORDER BY cities.id ASC;")
+
     """ fetch the results of the query """
-    rows_selected = db_cursor.fetchall()
+    rows_selected = cursor.fetchall()
 
     """ print the results """
     for row in rows_selected:
